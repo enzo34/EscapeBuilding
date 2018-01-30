@@ -2,6 +2,7 @@
 
 #include "PositioReport.h"
 #include "EscapeBuilding.h"
+#include "GameFramework/Actor.h"
 
 
 
@@ -22,7 +23,8 @@ void UPositioReport::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UE_LOG(LogTemp, Warning, TEXT("Position report reporting for duty on Chair !"));
+	FString ObjectName = GetOwner()->GetName();
+	UE_LOG(LogTemp, Warning, TEXT("Position report reporting for %s"), *ObjectName);
 
 }
 
